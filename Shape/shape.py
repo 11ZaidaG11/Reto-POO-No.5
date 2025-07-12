@@ -14,7 +14,7 @@ class Line():
         self.end = end
 
     def length(self)-> float:
-        length = self.start.compute_distance(self.start, self.end)
+        length = self.start.compute_distance(self.end)
         return length
 
 class Shape():
@@ -26,8 +26,6 @@ class Shape():
         pass
     def inner_angles(self) -> list[float]:
         pass
-
-
     def compute_area(self):
         pass
     def compute_perimeter(self):
@@ -59,6 +57,7 @@ class Square(Rectangle):
     def compute_perimeter(self) -> float:
         return 4*self.l
 
+
 class Triangle(Shape):
     def __init__(self, b:float, h:float):
         super().__init__()
@@ -67,6 +66,7 @@ class Triangle(Shape):
 
     def compute_area(self) -> float:
         return (self.b * self.h) / 2
+    
     
 class Equilateral(Triangle):
     pass
